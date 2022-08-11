@@ -39,7 +39,7 @@ write(" Create Account ")
 
 while true do
     local _, _, x, y = os.pullEvent("mouse_click")
-    if x >= 10 and x <= 20 and y == h / 2 + 5 then
+    if x >= w / 2 - string.len(" Create Account ") / 2 and x <= w / 2 + string.len(" Create Account ") / 2 and y == math.floor(h / 2) + 5 then
        term.clear()
     end
 end

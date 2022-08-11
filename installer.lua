@@ -37,10 +37,9 @@ term.setBackgroundColor(colors.lime)
 term.setCursorPos(w / 2 - string.len(" Create Account ") / 2, h / 2 + 5)
 write(" Create Account ")
 
-while d = true do
+while true do
     local _, _, x, y = os.pullEvent("mouse_click")
-    if x >= w / 2 - string.len(" Create Account ") / 2 and x <= w / 2 + string.len(" Create Account ") / 2 and y == h / 2 + 5 then
+    if x >= 10 and x <= 20 and y == h / 2 + 5 then
        term.clear()
-       d = false
     end
 end

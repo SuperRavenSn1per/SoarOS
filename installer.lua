@@ -3,6 +3,7 @@ local w,h = term.getSize()
 local d = true
 
 local dirs = {}
+local files = {startup.lua}
 
 local function download(fileName)
     local content = http.get(repo..branch..fileName).readAll()
@@ -65,3 +66,8 @@ term.setBackgroundColor(colors.blue)
 term.setCursorPos(w / 2 - string.len("Installing...") / 2, 4)
 write("Installing...")
 paintutils.drawLine(math.floor(w / 2 - 15), math.ceil(h / 2), math.floor(w / 2 + 15), math.ceil(h / 2), colors.green) 
+
+for i,f in pairs(files) do
+   download(f)
+   paintutils.drawLine(math.floor(w / 2 - 15), math.ceil(h / 2), math.floor(w / 2 - 15) + i / #files * 100 * 30, math.ceil(h / 2), colors.green)
+end

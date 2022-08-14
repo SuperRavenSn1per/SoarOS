@@ -64,4 +64,4 @@ paintutils.drawLine(w / 2 - 10, h / 2 + 3, w / 2 + 10, h / 2 + 3, colors.lightBl
 term.setBackgroundColor(colors.blue)
 term.setCursorPos(w / 2 - string.len("Installing...") / 2, 4)
 write("Installing...")
-paintutils.drawLine(math.floor(w / 2 - 15), math.floor(h / 2), math.floor(w / 2 + 15), math.floor(h / 2), colors.green) 
+paintutils.drawLine(math.floor(w / 2 - 15), math.ceil(h / 2), math.floor(w / 2 + 15), math.ceil(h / 2), colors.green) 

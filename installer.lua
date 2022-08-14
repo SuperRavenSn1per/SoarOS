@@ -2,6 +2,8 @@ local w,h = term.getSize()
 
 local d = true
 
+local dirs = {}
+
 local function download(fileName)
     local content = http.get(repo..branch..fileName).readAll()
     local f = fs.open(fileName, "w")
@@ -9,6 +11,9 @@ local function download(fileName)
     f.close()
 end
 
+
+fs.makeDir("SoarOS")
+fs.makeDir("SoarOS/Accounts")
 term.setBackgroundColor(colors.lightBlue)
 term.clear()
 term.setCursorPos(1,1)
@@ -40,6 +45,8 @@ write(" Create Account ")
 while true do
     local _, _, x, y = os.pullEvent("mouse_click")
     if x >= w / 2 - string.len(" Create Account ") / 2 - 1 and x <= w / 2 + string.len(" Create Account ") / 2 - 1 and y == math.floor(h / 2) + 5 then
-       term.clear()
+       local u = fs.open("SoarOS/Accounts/"..username, "w")
+       u.write(password)
+       u.close()
     end
 end

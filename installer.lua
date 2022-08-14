@@ -50,3 +50,16 @@ while true do
        u.close()
     end
 end
+
+term.setBackgroundColor(colors.lightBlue)
+term.clear()
+term.setCursorPos(1,1)
+paintutils.drawLine(1,1,w,1,colors.blue)
+paintutils.drawFilledBox(2,3,w-1,h-1,colors.blue)
+term.setCursorPos(w / 2 - string.len("SoarOS Installer") / 2, 1)
+write("SoarOS Installer")
+paintutils.drawLine(w / 2 - 10, h / 2, w / 2 + 10, h / 2, colors.lightBlue)
+paintutils.drawLine(w / 2 - 10, h / 2 + 3, w / 2 + 10, h / 2 + 3, colors.lightBlue)
+term.setBackgroundColor(colors.blue)
+term.setCursorPos(w / 2 - string.len("Installing...") / 2, 4)
+write("Installing...")

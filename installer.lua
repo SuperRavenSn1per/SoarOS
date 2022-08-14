@@ -48,6 +48,7 @@ while true do
        local u = fs.open("SoarOS/Accounts/"..username, "w")
        u.write(password)
        u.close()
+       break
     end
 end
 

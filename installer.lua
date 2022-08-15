@@ -1,5 +1,8 @@
 local w,h = term.getSize()
 
+local repo = "https://raw.githubusercontent.com/SuperRavenSn1per/SoarOS/"
+local branch = "main/"
+
 local d = true
 
 local dirs = {}
